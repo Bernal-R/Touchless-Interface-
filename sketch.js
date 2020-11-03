@@ -87,7 +87,6 @@ function setup() {
     salir.position(225, 320);
     salir.html('<img style= "opacity: 0.5" src="https://raw.githubusercontent.com/Bernal-R/Touchless-Interface-/master/assets/submen%C3%BA2.png" width="200" height="120">', true);
     salir.hide();
-
 }
 
 
@@ -142,14 +141,8 @@ function draw() {
         }
 
         if (mover_img == true) {
-            //x_corregido = map(coordenada_x, 480, 0, 0, 480);
-            //y_corregido = map(coordenada_y, 640, 0, 0, 640);
-
-            translate(img_movil, 0);
-            scale(-1, 1);
-
-            //print(coordenada_x, coordenada_y);
-            img_movil.position(coordenada_x, coordenada_y);
+            x_corregido = map(coordenada_x, 0, 640, 640, 0); //Corregir mirror en el video
+            img_movil.position(x_corregido - 110, coordenada_y - 110); //+- 110px para centrar la imagen, pues las coordenadas parten desde la base de la mano
         }
 
         //Boton menu 1
@@ -201,23 +194,7 @@ function draw() {
             sub_menu1 = false;
         }
     }
-
-
-
-    /*
-    if (estadoMano == "abierta") {
-        print("abierta");
-    } else if (estadoMano == "cerrada") {
-        print("cerrada");
-    } else if (estadoMano == "no detectada") {
-        print("no detectada");
-    }
-    */
 }
-
-
-
-
 
 
 
